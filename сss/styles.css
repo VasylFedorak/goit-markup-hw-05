@@ -729,11 +729,25 @@ img {
 .works-over-text {
   position: absolute;
 
-  left: 0;
-  bottom: 0;
+  bottom: 27px;
   width: 100%;
-  height: 24%;
+  opacity: 0;
+}
+
+.works .item:hover .works-over-text,
+.works .item:hover .works-overlay::before {
+  opacity: 1;
+}
+
+.works-overlay::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 70px;
+  top: 224px;
   background-color: rgba(47, 48, 58, 0.8);
+  opacity: 0;
 }
 
 .thumb {
@@ -743,9 +757,30 @@ img {
 .thumb-text {
   position: absolute;
 
-  top: 0px;
-  left: 0px;
+  top: 63px;
+  bottom: 63px;
+  right: 24px;
+  left: 24px;
+
+  opacity: 0;
+}
+
+.thumb::before {
+  position: absolute;
+  display: inline-block;
+  content: "";
   width: 100%;
   height: 100%;
-  background: rgba(33, 150, 243, 0.9);
+  background-color: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
 }
+
+.link-portfolio:hover .thumb-text,
+.link-portfolio:hover .thumb::before {
+  opacity: 1;
+}
+
+/*.link-portfolio:hover .thumb::before {
+  opacity: 1;
+}*/
