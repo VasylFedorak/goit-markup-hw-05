@@ -204,9 +204,16 @@ img {
   color: #ffffff;
 
   background-color: var(--hover-button-blue);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*ховер ефект*/
+
+.active {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .active:hover,
 .active:focus {
@@ -340,6 +347,9 @@ img {
   background-color: #f5f4fa;
   border-radius: 4px;
   border: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .active-portf-btn:hover,
@@ -591,6 +601,7 @@ img {
 
 .project {
   border: 1px solid #eeeeee;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project:hover,
@@ -617,6 +628,7 @@ img {
   height: 44px;
   background-color: var(--bgc);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .member-item {
@@ -632,6 +644,7 @@ img {
 
 .social-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon-link:hover,
@@ -672,6 +685,8 @@ img {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .partners-icon-link:hover,
@@ -686,6 +701,7 @@ img {
 
 .partners-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-icon {
@@ -699,6 +715,10 @@ img {
 
 .auth-icon {
   vertical-align: middle;
+}
+
+.link.contacts.active {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link.contacts.active:hover,
@@ -731,13 +751,13 @@ img {
 
   bottom: 27px;
   width: 100%;
-  opacity: 0;
+  /*opacity: 0;*/
 }
 
-.works .item:hover .works-over-text,
+/*.works .item:hover .works-over-text,
 .works .item:hover .works-overlay::before {
   opacity: 1;
-}
+}*/
 
 .works-overlay::before {
   content: "";
@@ -747,7 +767,7 @@ img {
   height: 70px;
   top: 224px;
   background-color: rgba(47, 48, 58, 0.8);
-  opacity: 0;
+  opacity: 1;
 }
 
 .thumb {
@@ -763,6 +783,8 @@ img {
   left: 24px;
 
   opacity: 0;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .thumb::before {
@@ -774,13 +796,60 @@ img {
   background-color: rgba(33, 150, 243, 0.9);
 
   opacity: 0;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-portfolio:hover .thumb-text,
-.link-portfolio:hover .thumb::before {
+.link-portfolio:hover .thumb::before,
+.link-portfolio:focus .thumb-text,
+.link-portfolio:focus .thumb::before {
   opacity: 1;
 }
 
-/*.link-portfolio:hover .thumb::before {
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
   opacity: 1;
-}*/
+  transition: opacity 2s ease-out;
+}
+
+.close {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--bgc);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
