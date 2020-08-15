@@ -726,6 +726,8 @@ img {
   fill: var(--hover-button-blue);
 }
 
+/*Декоративне підкреслення активної сторінки*/
+
 .emphasis {
   position: relative;
 }
@@ -741,6 +743,8 @@ img {
   background: #2196f3;
   border-radius: 2px;
 }
+
+/*текст і фон поверх секції "Чим ми займаємося"*/
 
 .works-overlay {
   position: relative;
@@ -769,6 +773,8 @@ img {
   background-color: rgba(47, 48, 58, 0.8);
   opacity: 1;
 }
+
+/*текст і фон які виїжають на карточках портфоліо*/
 
 .thumb {
   position: relative;
@@ -832,6 +838,8 @@ img {
 .link-portfolio:hover .overlay {
   transform: translateY(0);
 }
+
+/*Модальне вікно*/
 
 .backdrop {
   position: fixed;
