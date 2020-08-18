@@ -77,8 +77,17 @@
         </div>
         <div class="backdrop is-hidden" data-modal>
           <div class="modal">
-            <button class="btn-close" data-modal-close>X</button>
-            <p></p>
+            <button class="btn-close" data-modal-close>
+              <svg class="item-close" width="11" height="11">
+                <use href="./img/sprite.svg#icon-Vector-modal"></use>
+              </svg>
+            </button>
+            <form>
+              <label for="name">
+                Ім'я
+              </label>
+              <input type="text" name="name" id="name" />
+            </form>
           </div>
         </div>
       </section>
